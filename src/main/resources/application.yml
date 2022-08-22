@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:weather_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:qwerty}
+
+    flyway:
+      baselineOnMigrate: true
+      enabled: true
+      schemas: public
+
+
+weather-client:
+  name: weather-client
+  url: https://api.openweathermap.org/data/2.5/weather
